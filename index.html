@@ -576,25 +576,25 @@ const galleryData = [
   { name: '洛邑古城', desc: '汉服圣地 · 应天门夜景', img: 'https://aka.doubaocdn.com/s/xSsjUbGlUM' }
 ];
 
-// ===== 景点解说音频映射（真实TTS音频，导游口吻）=====
+// ===== 景点解说音频映射（30分钟长版播客，GitHub Pages同源）=====
 const spotAudioMap = {
-  '白马寺': 'https://aka.doubaocdn.com/s/ZgIMPnF0Vk',
-  '洛邑古城': 'https://aka.doubaocdn.com/s/LwcEYHV67D',
-  '老君山': 'https://aka.doubaocdn.com/s/DcdglGYqhi',
-  '洛阳博物馆': 'https://aka.doubaocdn.com/s/mnExzsQ1Jc',
-  '龙门石窟': 'https://aka.doubaocdn.com/s/62SPQ0OWeq',
-  '少林寺': 'https://aka.doubaocdn.com/s/rkhzVc5vHr',
-  '云台山·红石峡': 'https://aka.doubaocdn.com/s/nY9K7Yi7QV',
-  '云台山·茱萸峰': 'https://aka.doubaocdn.com/s/EsiUrAWpHV',
-  '云台山·小寨沟': 'https://aka.doubaocdn.com/s/E5JhWI6saJ',
-  '胖东来': 'https://aka.doubaocdn.com/s/jnRze19pVH',
-  '万仙山·郭亮挂壁公路': 'https://aka.doubaocdn.com/s/4o0uQQ9Mkp',
-  '红旗渠': 'https://aka.doubaocdn.com/s/gfcKlSz2gx',
-  '殷墟博物馆': 'https://aka.doubaocdn.com/s/A2WwpI591t',
-  '河南博物院': 'https://aka.doubaocdn.com/s/sFtbfIOmaC',
-  '清明上河园 & 大宋东京梦华': 'https://aka.doubaocdn.com/s/iJg1KFoPBO',
-  '开封府': 'https://aka.doubaocdn.com/s/rgMnjKVGPA',
-  '只有河南·戏剧幻城': 'https://aka.doubaocdn.com/s/YUuIli6AaV'
+  '白马寺': 'https://minjia-zhu.github.io/ninjiatrip/audio/白马寺.mp3',
+  '洛邑古城': 'https://minjia-zhu.github.io/ninjiatrip/audio/洛邑古城.mp3',
+  '老君山': 'https://minjia-zhu.github.io/ninjiatrip/audio/老君山.mp3',
+  '洛阳博物馆': 'https://minjia-zhu.github.io/ninjiatrip/audio/洛阳博物馆.mp3',
+  '龙门石窟': 'https://minjia-zhu.github.io/ninjiatrip/audio/龙门石窟.mp3',
+  '少林寺': 'https://minjia-zhu.github.io/ninjiatrip/audio/少林寺.mp3',
+  '云台山·红石峡': 'https://minjia-zhu.github.io/ninjiatrip/audio/云台山·红石峡.mp3',
+  '云台山·茱萸峰': 'https://minjia-zhu.github.io/ninjiatrip/audio/云台山·茱萸峰.mp3',
+  '云台山·小寨沟': 'https://minjia-zhu.github.io/ninjiatrip/audio/云台山·小寨沟.mp3',
+  '胖东来': 'https://minjia-zhu.github.io/ninjiatrip/audio/胖东来.mp3',
+  '万仙山·郭亮挂壁公路': 'https://minjia-zhu.github.io/ninjiatrip/audio/万仙山·郭亮挂壁公路.mp3',
+  '红旗渠': 'https://minjia-zhu.github.io/ninjiatrip/audio/红旗渠.mp3',
+  '殷墟博物馆': 'https://minjia-zhu.github.io/ninjiatrip/audio/殷墟博物馆.mp3',
+  '河南博物院': 'https://minjia-zhu.github.io/ninjiatrip/audio/河南博物院.mp3',
+  '清明上河园 & 大宋东京梦华': 'https://minjia-zhu.github.io/ninjiatrip/audio/清明上河园.mp3',
+  '开封府': 'https://minjia-zhu.github.io/ninjiatrip/audio/开封府.mp3',
+  '只有河南·戏剧幻城': 'https://minjia-zhu.github.io/ninjiatrip/audio/只有河南·戏剧幻城.mp3'
 };
 
 // ===== 语音合成（Web Speech API）兜底 =====
@@ -791,7 +791,7 @@ function renderPodcast(podcast, id) {
   const spotName = podcast.spotName || '';
   let audioUrl = '';
   if (spotName === '__summary__') {
-    audioUrl = 'https://aka.doubaocdn.com/s/5tohonsm7q';
+    audioUrl = 'https://minjia-zhu.github.io/ninjiatrip/audio/行程总结.mp3';
   } else {
     audioUrl = spotAudioMap[spotName] || '';
   }
@@ -864,7 +864,7 @@ function renderPodcastCollection() {
   container.innerHTML = list.map(item => {
     let audioUrl = '';
     if (item.spotName === '__summary__') {
-      audioUrl = 'https://aka.doubaocdn.com/s/5tohonsm7q';
+      audioUrl = 'https://minjia-zhu.github.io/ninjiatrip/audio/行程总结.mp3';
     } else {
       audioUrl = spotAudioMap[item.spotName] || '';
     }
